@@ -16,11 +16,11 @@ generator client {
 
 model transaction {
   id String @id  @default(cuid())
-  doneAt DateTime 
+  doneAt DateTime @default(now()) 
   addedAt DateTime @default(now())
   userId String
   amount Float
-  desc String
+  desc String @db.VarChar(255)
   isCredit Boolean
   recipient String
   @@index([userId])
