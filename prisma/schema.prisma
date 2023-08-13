@@ -12,10 +12,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Star {
-  id              Int       @default(autoincrement()) @id
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-  name            String    @db.VarChar(255)
-  constellation   String    @db.VarChar(255)
+
+
+model transaction {
+  id String @id  @default(cuid())
+  doneAt DateTime 
+  addedAt DateTime @default(now())
+  userId String
+  @@index([userId])
 }
