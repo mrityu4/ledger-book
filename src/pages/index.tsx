@@ -4,7 +4,7 @@ import {api} from '../utils/trpc'
 export default function Home() {
   const user=useUser();
   const {data} = api.example.getAll.useQuery();
-  console.log(data);
+
 
 
   return (
