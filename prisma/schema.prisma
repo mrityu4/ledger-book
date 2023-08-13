@@ -19,5 +19,9 @@ model transaction {
   doneAt DateTime 
   addedAt DateTime @default(now())
   userId String
+  amount Float
+  desc String
+  isCredit Boolean
+  recipient String
   @@index([userId])
 }

@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "~/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { AppType } from "next/app";
 import { api } from "./../utils/trpc";
