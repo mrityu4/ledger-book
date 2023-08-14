@@ -14,8 +14,11 @@ export const exampleRouter = createTRPCRouter({
       };
     }),
 
-  getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.transaction.findMany({ take: 100 });
+  getAll: privateProcedure.query(({ ctx }) => {
+    return ctx.prisma.transaction.findMany({
+      take: 100,
+      where: { userId: { equals: ctx.userId } },
+    });
   }),
   add: privateProcedure
     .input(
